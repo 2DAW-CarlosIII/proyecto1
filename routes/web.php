@@ -14,23 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('paginaprincipal');
+    return ['Laravel' => app()->version()];
 });
-Route::get('login', function () {
-    return view('login');
-});
-Route::get('logout', function () {
-    return view('logout');
-});
-Route::get('productos', function () {
-    return view('producto/listaproductos');
-});
-Route::get('productos/show/{id}', function () {
-    return view('producto/mostrarproducto');
-});
-Route::get('productos/create', function () {
-    return view('producto/añadirproducto');
-});
-Route::get('productos/edit/{id}', function () {
-    return view('producto/editarproducto');
-});
+
+require __DIR__.'/auth.php';
